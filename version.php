@@ -17,14 +17,14 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     block_google_search
+ * @package     block_google_static_search
  * @copyright   2024 sangyul cha <eddie6798@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'block_google_search';
+$plugin->component = 'block_google_static_search';
 $plugin->release = '0.1.0';
 $plugin->version = 2024020500;
 $plugin->requires = 2022112800;

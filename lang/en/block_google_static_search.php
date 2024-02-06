@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     block_google_search
+ * @package     block_google_static_search
  * @category    string
  * @copyright   2024 sangyul cha <eddie6798@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Google search';
-$string['google_search'] = 'Google search';
-$string['google_search:addinstance'] = 'Add a new Google Search';
-$string['google_search:myaddinstance'] = 'Add a new Google Search to dashboard';
+$string['pluginname'] = 'Google Search Moodle Block';
+$string['google_static_search'] = 'Google Search Moodle Block';
+$string['google_static_search:addinstance'] = 'Add a new Google Search for Moodle Block';
+$string['google_static_search:myaddinstance'] = 'Add a new Google Search for Moodle Block to dashboard';

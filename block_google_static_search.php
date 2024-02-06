@@ -17,18 +17,18 @@
 /**
  * Block google_search is defined here.
  *
- * @package     block_google_search
+ * @package     block_google_staic_search
  * @copyright   2024 sangyul cha <eddie6798@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_google_search extends block_base {
+class block_google_static_search extends block_base {
 
     /**
      * Initializes class member variables.
      */
     public function init() {
         // Needed by Moodle to differentiate between blocks.
-        $this->title = get_string('pluginname', 'block_google_search');
+        $this->title = get_string('pluginname', 'block_google_static_search');
     }
 
     /**
@@ -66,7 +66,7 @@ class block_google_search extends block_base {
         //$this->content->text = '<pre>' . htmlentities($response) . '</pre>';
 
         // Display search results in HTML
-        $html_result = '<div class="block-google-search">';
+        $html_result = '<div class="block-google-static-search">';
         $html_result .= '<link rel="stylesheet" type="text/css" href="' . $this->get_css_url() . '">';
         $html_result .= '<table>';
         foreach ($json_data['items'] as $item) {
@@ -82,7 +82,7 @@ class block_google_search extends block_base {
     }
     private function get_css_url() {
         $block_path = rtrim(dirname(__FILE__), '/');
-        $css_file = 'block_google_search.css';
+        $css_file = 'style.css';
         return "$block_path/$css_file";
     }
     /**
@@ -94,7 +94,7 @@ class block_google_search extends block_base {
 
         // Load user defined title and make sure it's never empty.
         if (empty($this->config->title)) {
-            $this->title = get_string('pluginname', 'block_google_search');
+            $this->title = get_string('pluginname', 'block_google_static_search');
         } else {
             $this->title = $this->config->title;
         }
