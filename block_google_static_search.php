@@ -53,10 +53,8 @@ class block_google_static_search extends block_base {
         }
 
         $this->content = new stdClass();
-        // Google API Key and Custom Search Engine ID
-        //$api_key = 'AIzaSyDRzmXvfPQWSsilU-5eos8a68PFwKsGF9U';
-        $api_key = get_config('block_google_static_search', 'apikey');
-        //$search_engine_id = '46edb91afe35b466e';
+        // Google API Key and Custom
+        $api_key = get_config('block_google_static_search', 'a
         $search_engine_id = get_config('block_google_static_search', 'search_engine_id');
 
         // Set the search term with spaces replaced by %20
