@@ -30,14 +30,19 @@ class block_google_static_search extends block_base {
         // Needed by Moodle to differentiate between blocks.
         $this->title = get_string('pluginname', 'block_google_static_search');
     }
-
+    public function has_config() {
+        return true;
+    }
+    public function instance_allow_config() {
+        return true;
+    }
     /**
      * Returns the block contents.
      *
      * @return stdClass The block contents.
      */
     public function get_content() {
-
+        global $CFG;
         if ($this->content !== null) {
             return $this->content;
         }
@@ -49,8 +54,10 @@ class block_google_static_search extends block_base {
 
         $this->content = new stdClass();
         // Google API Key and Custom Search Engine ID
-        $api_key = 'AIzaSyDRzmXvfPQWSsilU-5eos8a68PFwKsGF9U';
-        $search_engine_id = '46edb91afe35b466e';
+        //$api_key = 'AIzaSyDRzmXvfPQWSsilU-5eos8a68PFwKsGF9U';
+        $api_key = get_config('block_google_static_search', 'apikey');
+        //$search_engine_id = '46edb91afe35b466e';
+        $search_engine_id = get_config('block_google_static_search', 'search_engine_id');
 
         // Set the search term with spaces replaced by %20
         $search_term = str_replace(' ', '%20', 'Moodle Blocks');

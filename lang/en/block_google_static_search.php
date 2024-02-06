@@ -29,3 +29,7 @@ $string['pluginname'] = 'Google Search Moodle Block';
 $string['google_static_search'] = 'Google Search Moodle Block';
 $string['google_static_search:addinstance'] = 'Add a new Google Search for Moodle Block';
 $string['google_static_search:myaddinstance'] = 'Add a new Google Search for Moodle Block to dashboard';
+$string['search_engine_id'] = 'Google Custom Search Engine ID';
+$string['search_engine_id_desc'] = 'Enter your Google Custom Search Engine ID here.';
+$string['apikey'] = 'Google API Key';
+$string['apikey_desc'] = 'Enter your Google API Key here.';
