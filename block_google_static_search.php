@@ -30,19 +30,14 @@ class block_google_static_search extends block_base {
         // Needed by Moodle to differentiate between blocks.
         $this->title = get_string('pluginname', 'block_google_static_search');
     }
-    public function has_config() {
-        return true;
-    }
-    public function instance_allow_config() {
-        return true;
-    }
+
     /**
      * Returns the block contents.
      *
      * @return stdClass The block contents.
      */
     public function get_content() {
-        global $CFG;
+
         if ($this->content !== null) {
             return $this->content;
         }
@@ -85,11 +80,13 @@ class block_google_static_search extends block_base {
         $this->content->text = $html_result;
         return $this->content;
     }
+
     private function get_css_url() {
         $block_path = rtrim(dirname(__FILE__), '/');
         $css_file = 'style.css';
         return "$block_path/$css_file";
     }
+
     /**
      * Defines configuration data.
      *
@@ -115,6 +112,15 @@ class block_google_static_search extends block_base {
             'all' => true,
         );
     }
+
+    public function has_config() {
+        return true;
+    }
+
+    public function instance_allow_config() {
+        return true;
+    }
+
     function _self_test() {
   	return true;
 	}
