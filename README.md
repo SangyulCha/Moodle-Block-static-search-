@@ -7,7 +7,7 @@ This block plugin fetches the Google Custom Search Engine ID and Google API Key 
 
 ### Prerequisites
 * Create a small droplet with Ubuntu 22.04
-* Follow the [tutorial](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04) on setting up Ubuntu 16.04
+* Follow the [tutorial](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04) on setting up Ubuntu 22.04
 * git should be installed by default
 
 From here on we can just follow this tutorial. It assumes that you have a user with root privileges which means you need to type `sudo` before any other command.
