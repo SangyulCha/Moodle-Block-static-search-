@@ -1,4 +1,4 @@
-# Google static search #
+# Google Search Moodle Block #
 
 This block plugin fetches the Google Custom Search Engine ID and Google API Key from the settings and displays the results of searching for "Moodle Block" within the block.
 
