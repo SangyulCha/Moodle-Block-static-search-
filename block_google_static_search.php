@@ -23,6 +23,7 @@
  */
 class block_google_static_search extends block_base
 {
+    const PLUGIN_NAME = 'block_google_static_search';
 
     /**
      * Initializes class member variables.
@@ -30,7 +31,7 @@ class block_google_static_search extends block_base
     public function init()
     {
         // Needed by Moodle to differentiate between blocks.
-        $this->title = get_string('pluginname', 'block_google_static_search');
+        $this->title = get_string('pluginname', self::PLUGIN_NAME);
     }
 
     /**
@@ -52,8 +53,8 @@ class block_google_static_search extends block_base
 
         $this->content = new stdClass();
         // Google API Key and Custom
-        $api_key = get_config('block_google_static_search', 'apikey');
-        $search_engine_id = get_config('block_google_static_search', 'search_engine_id');
+        $api_key = get_config(self::PLUGIN_NAME, 'apikey');
+        $search_engine_id = get_config(self::PLUGIN_NAME, 'search_engine_id');
 
         // Set the search term with spaces replaced by %20
         $search_term = str_replace(' ', '%20', 'Moodle Blocks');
@@ -101,7 +102,7 @@ class block_google_static_search extends block_base
 
         // Load user defined title and make sure it's never empty.
         if (empty($this->config->title)) {
-            $this->title = get_string('pluginname', 'block_google_static_search');
+            $this->title = get_string('pluginname', self::PLUGIN_NAME);
         } else {
             $this->title = $this->config->title;
         }
