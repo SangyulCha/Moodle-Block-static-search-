@@ -13,25 +13,27 @@ This block plugin fetches the Google Custom Search Engine ID and Google API Key 
 From here on we can just follow this tutorial. It assumes that you have a user with root privileges which means you need to type `sudo` before any other command.
 
 ## Step 1: Getting the packages
+### Dependency
+* Nginx
+* PostgreSQL
+  
 In order to run moodle some packages have to be installed first. Make sure to have up to date sources:
 ```command
-sudo apt-get update
+sudo apt update
 ```
 
 ### Install Nginx:
-Moodle works extremely well with Nginx as it offers a simple setup and serves static files blazingly fast. Even though moodle is a huge PHP application it has advanced caching features. So Nginx is our choice:
 
 ```command
-sudo apt-get install nginx
+sudo apt install nginx
 ```
 
 There's also a [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04) about Nginx with more details.
     
 ### Install postgresql:
-Postgres is a very reliable database. Technically MariaDB or MySQL should do to but we're focusing on speed:
 
 ```command
-sudo apt-get install postgresql postgresql-contrib
+sudo apt install postgresql postgresql-contrib
 ```
 
 For additional guidance see the [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-22-04) on Postgresql. 
@@ -40,7 +42,7 @@ For additional guidance see the [tutorial](https://www.digitalocean.com/communit
 This rather long command will install all the necessary and recommended packages to run moodle on PHP 8.1:
 
 ```command
-sudo apt-get install php-fpm php-curl php-gd php-xmlrpc php-intl php-xml php-zip php-mbstring php-soap php-pgsql
+sudo apt install php-fpm php-curl php-gd php-xmlrpc php-intl php-xml php-zip php-mbstring php-soap php-pgsql
 ```
 
 ## Step 2: Installing moodle
@@ -63,7 +65,7 @@ cd html
 git clone https://github.com/moodle/moodle.git
 ```
     
-This will clone the github moodle repository in a directory called `moodle`. Now you can do many things a lot easier. For example, if you moved from another hosting provider to DigitalOcean, you can just "check out" the version you last used and then check out the latest version. Or you can just stick with stable releases. There is a whole world of simple code management open for you. For this tutorial, we will simply check out the latest stable version which moodle always keeps in its own branch. To find out which version is latest for you, do this:
+This will clone the github moodle repository in a directory called `moodle`. We will simply check out the latest stable version which moodle always keeps in its own branch. To find out which version is latest for you, do this:
 
 ```command
 cd moodle
@@ -74,14 +76,6 @@ Currently the latest stable Version is `MOODLE_403_STABLE` so this is the one we
 
 ```command
 git checkout MOODLE_403_STABLE
-```
-    
-While Moodle also tags its releases, following a branch has the advantage that you can easily update following the weekly releases to the stable branches without following the current tags.
-
-To update moodle a simple `git pull` will suffice to get the latest weekly release for the current branch. Once a new major release becomes available you will have to switch branches and set this branch to follow. So as soon as Moodle 4.4 becomes available you might want to run this command:
-
-```command
-git checkout MOODLE_404_Stable
 ```
     
 ### Adjustments
