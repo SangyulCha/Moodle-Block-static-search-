@@ -52,21 +52,21 @@ class block_google_static_search extends block_base
         }
 
         $this->content = new stdClass();
-        // Google API Key and Custom
+        // Load necessary configurations.
         $api_key = get_config(self::PLUGIN_NAME, 'apikey');
         $search_engine_id = get_config(self::PLUGIN_NAME, 'search_engine_id');
 
-        // Set the search term with spaces replaced by %20
+        // Set the search term with spaces replaced by %20.
         $search_term = str_replace(' ', '%20', 'Moodle Blocks');
 
-        // Google API call
+        // Google API call.
         $api_url = "https://www.googleapis.com/customsearch/v1?q=$search_term&key=$api_key&cx=$search_engine_id";
         $response = file_get_contents($api_url);
 
-        // Convert JSON data to an associative array
+        // Convert JSON data to an associative array.
         $json_data = json_decode($response, true);
 
-        // Output JSON data in raw format
+        // Output JSON data in raw format.
         //$this->content->text = '<pre>' . htmlentities($response) . '</pre>';
 
         // Display search results in HTML
